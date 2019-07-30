@@ -1,0 +1,98 @@
+conky.config = {
+-- Conky settings
+	background = false,
+	update_interval = 1,
+
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+
+	override_utf8_locale = true,
+
+	double_buffer = true,
+	no_buffers = true,
+
+	text_buffer_size = 2048,
+--imlib_cache_size 0
+
+	temperature_unit = 'celsius',
+
+-- Window specifications
+	own_window_class = 'Conky',
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+
+	minimum_width = 600, minimum_height = 1080,
+	maximum_width = 700,
+
+	alignment = 'top_left',
+	gap_x = -20,
+	gap_y = 50,
+
+-- Graphics settings
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+
+	default_color = 'gray',
+	default_shade_color = 'red',
+	default_outline_color = 'green',
+
+-- Text settings
+	use_xft = true,
+	override_utf8_locale = true,
+	font = 'Play:normal:size=14',
+	xftalpha = 0.9,
+	uppercase = false,
+
+	default_color = '#424153',
+	color0 = '#424153', -- rings
+	color1 = '#999999', -- sub text
+	color2 = '#000000', -- 
+	color3 = '#996633', -- heading
+	color4 = '#cccccc', -- text
+
+-- Lua Load
+	lua_load = '~/.conky/rings-v1.3.1.lua',
+	lua_draw_hook_pre = 'ring_stats',
+};
+
+conky.text = [[
+${font Play:normal:size=11}${voffset 10}${color4}${goto 120}${freq_g cpu0} Ghz${alignr 280}${acpitemp} °C
+${font Play:normal:size=11}${voffset 4}${goto 120}${color4}CPU 1${alignr 280}${color4}${cpu cpu1}%
+${font Play:normal:size=11}${voffset 4}${goto 120}${color4}CPU 2${alignr 280}${color4}${cpu cpu2}%
+${font Play:normal:size=11}${voffset 4}${goto 120}${color4}CPU 3${alignr 280}${color4}${cpu cpu3}%
+${font Play:normal:size=11}${voffset 4}${goto 120}${color4}CPU 4${alignr 280}${color4}${cpu cpu4}%
+${goto 50}${voffset 32}${font Play:normal:size=11}${color4}${top name 1}${alignr 280}${top cpu 1}%
+${goto 50}${font Play:normal:size=11}${color4}${top name 2}${alignr 280}${top cpu 2}%
+${goto 50}${font Play:normal:size=11}${color4}${top name 3}${alignr 280}${top cpu 3}%
+${font Michroma:size=20}${color3}${goto 10}${voffset 3}CPU 
+${font Michroma:size=20}${color3}${alignr 0}${voffset 100}MEMORY
+${goto 350}${voffset 0}${font Play:normal:size=11}${color4}${top_mem name 1}${alignr 10}${top_mem mem 1}%
+${goto 350}${font Play:normal:size=11}${color4}${top_mem name 2}${alignr 10}${top_mem mem 2}%
+${goto 350}${font Play:normal:size=11}${color4}${top_mem name 3}${alignr 10}${top_mem mem 3}%
+${font Play:normal:size=11}${voffset 15}${goto 350}${color4}SWAP${alignr 10}${color4}${swap} / ${color4}${swapmax}
+${font Play:normal:size=11}${voffset 5}${goto 350}${color4}RAM ${alignr 10}${color4}${mem} / ${color4}${memmax}
+${font Play:normal:size=11}${goto 50}${voffset 0}HDD 1TB${alignr 310}${color4}${fs_used /home} / ${fs_size /home/rashnoy/Mounts/BackUp}
+${font Play:normal:size=11}${goto 50}${voffset 0}HDD 500GB${alignr 310}${color4}${fs_used /root} / ${fs_size /home/rashnoy/Mounts/Downloads}
+${font Play:normal:size=11}${goto 50}${voffset 0}SSD${alignr 310}${color4}${fs_used /home} / ${fs_size /home/rashnoy/Mounts/SSD}
+${font Play:normal:size=11}${goto 50}${voffset 0}Home${alignr 310}${color4}${fs_used /home} / ${fs_size /home}
+${font Play:normal:size=11}${goto 50}${voffset 0}Root${alignr 310}${color4}${fs_used /root} / ${fs_size /root}
+${font Michroma:size=20}${color3}${goto 10}${voffset 3}HARD  DRIVE
+${font Michroma:size=20}${color3}${voffset 150}${alignr 0}NETWORK
+${font Play:normal:size=11}${color4}${goto 350}${voffset 5}Up${alignr 10}${color4}${totalup br0} / ${color4}${upspeed br0}
+${font Play:normal:size=11}${goto 350}${color4}Down${alignr 10}${color4}${totaldown br0} / ${color4}${downspeed br0}
+${font Play:normal:size=11}${goto 350}${voffset 2}Local IP${alignr 10}${addr br0}
+${font Play:normal:size=11}${goto 350}${voffset 1}Public IP${alignr 10}${execi 3600 wget -qO - ifconfig.co | sed -e 's/[^[:digit:]\|.]//g'}
+${font Michroma:size=9}${alignc 150}${voffset -75} ${color1}${time %d %B %Y}
+${font Michroma:size=18}${alignc 150}${color1}${voffset 0}${time %H}:${time %M}
+${font Michroma:size20}${color1}${goto 10}${voffset 50}Uptime${font Play:normal:size=10}${color1}${alignr 10}${uptime_short}
+${font Michroma:size20}${color1}${goto 10}${voffset 0}Kernel${font Play:normal:size=10}${color1}${alignr 10}${kernel}
+]];
