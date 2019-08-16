@@ -17,21 +17,7 @@ Changelog:
 ]]
 
 settings_table = {
-    
-	{
-        name='acpitemp',
-        arg='',
-        max=110,
-        bg_colour=0xDCDCDC,
-        bg_alpha=0.5,
-        fg_colour=0x424153,
-        fg_alpha=0.9,
-        x=200, y=120,
-        radius=95,
-        thickness=4,
-        start_angle=0,
-        end_angle=240
-    },    
+        
 	{
         name='cpu',
         arg='cpu1',
@@ -40,11 +26,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=200, y=120,
-        radius=85,
-        thickness=13,
-        start_angle=0,
-        end_angle=240
+        x=200, y=175,
+        radius=150,
+        thickness=25,
+        start_angle=270,
+        end_angle=450
     },
     {
         name='cpu',
@@ -54,11 +40,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=200, y=120,
-        radius=71,
-        thickness=12,
-        start_angle=0,
-        end_angle=240
+        x=200, y=175,
+        radius=125,
+        thickness=24,
+        start_angle=270,
+        end_angle=450
     },
 {
         name='cpu',
@@ -68,11 +54,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=200, y=120,
-        radius=58,
-        thickness=11,
-        start_angle=0,
-        end_angle=240
+        x=200, y=175,
+        radius=101,
+        thickness=23,
+        start_angle=270,
+        end_angle=450
     },
     {
         name='cpu',
@@ -82,11 +68,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=200, y=120,
-        radius=46,
-        thickness=10,
-        start_angle=0,
-        end_angle=240
+        x=200, y=175,
+        radius=78,
+        thickness=22,
+        start_angle=270,
+        end_angle=450
     },
     {
         name='cpu',
@@ -96,11 +82,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=200, y=120,
-        radius=35,
-        thickness=10,
-        start_angle=0,
-        end_angle=240
+        x=200, y=175,
+        radius=56,
+        thickness=21,
+        start_angle=270,
+        end_angle=450
     },
     {
         name='cpu',
@@ -110,11 +96,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=200, y=120,
-        radius=24,
+        x=200, y=175,
+        radius=40,
         thickness=10,
-        start_angle=0,
-        end_angle=240
+        start_angle=270,
+        end_angle=450
     },
     {
         name='memperc',
@@ -124,9 +110,9 @@ settings_table = {
         bg_alpha=0.5,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=500, y=250,
-        radius=60,
-        thickness=15,
+        x=1780, y=225,
+        radius=125,
+        thickness=50,
         start_angle=180,
         end_angle=420
     },
@@ -138,9 +124,9 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=400,
-        radius=72,
-        thickness=10,
+        x=180, y=625,
+        radius=140,
+        thickness=25,
         start_angle=0,
         end_angle=240
     },
@@ -152,9 +138,9 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=400,
-        radius=61,
-        thickness=10,
+        x=180, y=625,
+        radius=114,
+        thickness=25,
         start_angle=0,
         end_angle=240
     },
@@ -166,9 +152,9 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=400,
-        radius=50,
-        thickness=10,
+        x=180, y=625,
+        radius=88,
+        thickness=25,
         start_angle=0,
         end_angle=240
     },
@@ -180,67 +166,11 @@ settings_table = {
         bg_alpha=0.3,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=400,
-        radius=39,
-        thickness=10,
+        x=180, y=625,
+        radius=62,
+        thickness=25,
         start_angle=0,
         end_angle=240
-    },
-    {
-        name='downspeedf',
-        arg='enp6s0f1',
-        max=12500,
-        bg_colour=0xDCDCDC,
-        bg_alpha=0.6,
-        fg_colour=0x424153,
-        fg_alpha=0.9,
-        x=400, y=550,
-        radius=30,
-        thickness=12,
-        start_angle=270,
-        end_angle=510
-    },
-    {
-        name='upspeedf',
-        arg='enp6s0f1',
-        max=2500,
-        bg_colour=0xDCDCDC,
-        bg_alpha=0.3,
-        fg_colour=0x424153,
-        fg_alpha=0.9,
-        x=400, y=550,
-        radius=18,
-        thickness=8,
-        start_angle=270,
-        end_angle=510
-    },
-    {
-        name='downspeedf',
-        arg='wlp0s20f3',
-        max=12500,
-        bg_colour=0xDCDCDC,
-        bg_alpha=0.6,
-        fg_colour=0x424153,
-        fg_alpha=0.9,
-        x=500, y=600,
-        radius=30,
-        thickness=12,
-        start_angle=180,
-        end_angle=420
-    },
-    {
-        name='upspeedf',
-        arg='wlp0s20f3',
-        max=2500,
-        bg_colour=0xDCDCDC,
-        bg_alpha=0.3,
-        fg_colour=0x424153,
-        fg_alpha=0.9,
-        x=500, y=600,
-        radius=18,
-        thickness=8,
-        start_angle=180,
-        end_angle=420
     },
     {
         name='time',
@@ -250,11 +180,11 @@ settings_table = {
         bg_alpha=0.2,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=720,
-        radius=32,
-        thickness=12,
+        x=960, y=550,
+        radius=128,
+        thickness=16,
         start_angle=0,
-        end_angle=240
+        end_angle=360
     },
     {
         name='time',
@@ -264,11 +194,11 @@ settings_table = {
         bg_alpha=0.4,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=720,
-        radius=46,
-        thickness=14,
+        x=960, y=550,
+        radius=146,
+        thickness=18,
         start_angle=0,
-        end_angle=240
+        end_angle=360
     },
     {
         name='time',
@@ -278,11 +208,11 @@ settings_table = {
         bg_alpha=0.6,
         fg_colour=0x424153,
         fg_alpha=0.9,
-        x=150, y=720,
-        radius=62,
-        thickness=16,
+        x=960, y=550,
+        radius=167,
+        thickness=20,
         start_angle=0,
-        end_angle=240
+        end_angle=360
     },
 }
 
