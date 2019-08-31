@@ -81,11 +81,18 @@ ${font Play:normal:size=12}${voffset 290}${goto 1600}${color4}${top_mem name 1}$
 ${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${top_mem name 2}${alignr 0}${top_mem mem 2}%
 ${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${top_mem name 3}${alignr 0}${top_mem mem 3}%
 ${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}RAM ${alignr 0}${color4}${mem} / ${memmax}
-${font Michroma:size=13}${voffset 80}${alignc 0}${color4}${nodename}
+${font Michroma:size=13}${voffset -20}${alignc 0}${color4}${nodename}
 ${font Michroma:size=32}${voffset 200}${alignc 0}${color4}${time %d %B %Y}
 ${font Michroma:size=24}${voffset 0}${alignc 0}${color4}${time %H}:${time %M}:${time %S}
 ${font Michroma:size=12}${voffset 0}${goto 750}${color1}Uptime${alignr 750}${uptime_short}
 ${font Michroma:size=12}${voffset 0}${goto 750}${color1}Kernel${alignr 750}${kernel}
+${if_up wlp0s20f3}
+	${font Michroma:size=12}${voffset -25}${goto 750}${color1}WAN IP${alignr 750}${addr wlp0s20f3}
+${endif}
+${if_up enp6s0f1}
+	${font Michroma:size=12}${voffset -45}${goto 750}${color1}LAN IP${alignr 750}${addr enp6s0f1}
+${endif}
+${font Michroma:size=12}${voffset -25}${goto 750}${color1}Public IP${alignr 750}${execi 3600 wget -qO - ifconfig.co | sed -e 's/[^[:digit:]\|.]//g'}
 ${font Play:normal:size=12}${voffset -150}${goto 40}${color4}Partition 1${alignr 1555}${fs_used /home/rashnoy/Mounts/Partition1} / ${fs_size /home/rashnoy/Mounts/Partition1}
 ${font Play:normal:size=12}${voffset 0}${goto 40}${color4}Partition 2${alignr 1555}${fs_used /home/rashnoy/Mounts/Partition2} / ${fs_size /home/rashnoy/Mounts/Partition2}
 ${font Play:normal:size=12}${voffset 0}${goto 40}${color4}Home${alignr 1555}${fs_used /home} / ${fs_size /home}
@@ -93,22 +100,22 @@ ${font Play:normal:size=12}${voffset 0}${goto 40}${color4}Root${alignr 1555}${fs
 ${font Michroma:size=32}${voffset 10}${goto 30}${color3}HARD  DRIVE
 ${font Michroma:size=32}${voffset -480}${alignr 0}${color3}NETWORK
 ${if_up wlp0s20f3}
-${font Play:normal:size=12}${voffset -90}${goto 1600}${color4}Wireless:
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${wireless_essid wlp0s20f3} ${alignr 0}(${wireless_link_qual_perc wlp0s20f3}%)
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Up:${alignr 0}${upspeed wlp0s20f3}/s
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${upspeedgraph wlp0s20f3 20,300 color0}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totalup wlp0s20f3}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Down:${alignr 0}${downspeed wlp0s20f3}/s
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${downspeedgraph wlp0s20f3 20,300 color0}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totaldown wlp0s20f3}
+	${font Play:normal:size=12}${voffset -90}${goto 1600}${color4}Wireless:
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${wireless_essid wlp0s20f3} ${alignr 0}(${wireless_link_qual_perc wlp0s20f3}%)
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Up:${alignr 0}${upspeed wlp0s20f3}/s
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${upspeedgraph wlp0s20f3 20,300 color0}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totalup wlp0s20f3}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Down:${alignr 0}${downspeed wlp0s20f3}/s
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${downspeedgraph wlp0s20f3 20,300 color0}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totaldown wlp0s20f3}
 ${endif}
-${if_up enp6s0f1}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Wired:
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Up:${alignr 0}${upspeed enp0s31f6}/s
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${upspeedgraph enp0s31f6 20,300 color0}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totalup enp0s31f6}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Down:${alignr}${downspeed enp0s31f6}/s
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${downspeedgraph enp0s31f6 20,300 color0}
-${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totaldown enp0s31f6}
+	${if_up enp6s0f1}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Wired:
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Up:${alignr 0}${upspeed enp6s0f1}/s
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${upspeedgraph enp6s0f1 20,300 color0}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totalup enp6s0f1}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Down:${alignr}${downspeed enp6s0f1}/s
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}${downspeedgraph enp6s0f1 20,300 color0}
+	${font Play:normal:size=12}${voffset 0}${goto 1600}${color4}Total: ${alignr 0}${totaldown enp6s0f1}
 ${endif}
 ]];
